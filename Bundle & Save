@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAY! It’s BOGO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .bundle-option {
+            border: 1px solid #C8C8C8;
+            padding: 10px;
+            cursor: pointer;    margin: 10px auto;    width: 50%;
+
+        }
+        .bundle-option.active {
+            border: 2px solid #FF6B82;
+            background-color: #FFF9FA;
+        }
+        .details {
+            display: none;
+            padding: 10px;
+            
+        }
+        .details select {
+            margin: 5px;
+        }
+      @media screen and (min-width: 750px) {
+    .main_test_design {
+        padding: 0 5rem;
+    }
+}
+      .main_test_design {
+    max-width:140rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+      @media screen and (min-width: 750px) {
+    .main_test_design {
+        padding: 0 5rem;
+    }
+}
+      .bundle-design {
+    text-align: center;
+}
+      button.button_bd {
+    background: #FF6B82;
+    width: 342px;
+    height: 40px;
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+}
+  
+h2::before,
+h2::after {
+    display: inline-block;
+    content: "";
+    border-top: 0.9px solid #C8C8C8;
+    width: 4rem;
+    margin: 0 1rem;
+    transform: translateY(-1rem);
+
+}
+      .cartt_value {
+    display: flex
+;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+    </style>
+</head>
+<body>
+  <div class="main_test_design">
+    <div class="bundle-design">
+    <h2 style="color:#FF6B82;font-weight:600;">YAY! It’s BOGO</h2>
+    
+    <div class="bundle-option" onclick="toggleDetails('bundle1')">
+        <input type="radio" name="bundle" id="bundle1"> 1 Unit 
+        <div class="details" id="details-bundle1">
+          <label>#1 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+        </div>
+  
+    </div>
+    
+    <div class="bundle-option" onclick="toggleDetails('bundle2')">
+        <input type="radio" name="bundle" id="bundle2"> 
+     
+        <span class="first_info" >1 Unit</span>
+         <span class="second_info" >$18.00 USD</span>
+          
+
+
+        <div class="details" id="details-bundle2">
+      
+            <label>#1 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+            <br>
+            <label>#2 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+        </div>
+    </div>
+    
+    <div class="bundle-option" onclick="toggleDetails('bundle3')">
+        <input type="radio" name="bundle" id="bundle3"> 3 Unit 
+        <div class="details" id="details-bundle3">
+            <label>#1 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+            <br>
+            <label>#2 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+            <br>
+            <label>#3 Size: <select><option>S</option><option>M</option></select></label>
+            <label>Color: <select><option>Red</option><option>Blue</option></select></label>
+        </div>
+    </div>
+      <div class="cartt_value">
+        <span class="delivery_text">Free Delivery</span>
+         <span class="cart_value"> Total: Cart value</span>
+      
+      </div>
+    
+    <button class="button_bd">+ Add to Cart</button>
+    
+    <script>
+        function toggleDetails(bundleId) {
+            document.querySelectorAll('.bundle-option').forEach(option => {
+                option.classList.remove('active');
+                option.querySelector('.details').style.display = 'none';
+            });
+            
+            const selectedBundle = document.getElementById(`details-${bundleId}`).parentNode;
+            selectedBundle.classList.add('active');
+            document.getElementById(`details-${bundleId}`).style.display = 'block';
+        }
+    </script>
+  </div></div>
+</body>
+</html>
+
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [],
+      "presets": [
+    {
+      "name": "test design",
+    }
+  ]
+  }
+{% endschema %}
